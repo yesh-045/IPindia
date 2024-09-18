@@ -14,7 +14,7 @@
             background-color: #ffffff;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Adjusts logos to opposite ends */
+            justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ffffff;
         }
@@ -24,7 +24,7 @@
         }
         .logo img {
             height: 70px;
-            width: 300px;
+            width: 200px; /* Adjusted width for better mobile fit */
             margin-right: 20px;
         }
         .right-logo {
@@ -36,7 +36,6 @@
         .right-logo img {
             height: 50px;
             margin-left: 10px;
-            
         }
         .nav {
             background-color: #00205b;
@@ -44,15 +43,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
         .nav ul {
-            list-style-type: Snone;
+            list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-wrap: wrap; /* Ensure menu items wrap on small screens */
         }
         .nav ul li {
             margin-right: 20px;
+            margin-bottom: 10px; /* Add space between rows on small screens */
         }
         .nav ul li a {
             color: white;
@@ -63,6 +65,7 @@
         .nav-right {
             display: flex;
             align-items: center;
+            margin-top: 10px; /* Add margin to avoid crowding */
         }
         .search-icon {
             background-color: #00205b;
@@ -72,7 +75,7 @@
             justify-content: center;
             color: white;
             font-size: 20px;
-            margin-right: 20px;
+            margin-right: 10px;
         }
         .search-bar {
             background-color: white;
@@ -80,6 +83,7 @@
             border-radius: 4px;
             border: 1px solid #ccc;
             outline: none;
+            width: 200px;
         }
         .content {
             padding: 20px;
@@ -91,6 +95,7 @@
         }
         .publications {
             display: flex;
+            flex-direction: column; /* Stack elements vertically on mobile */
         }
         .main-content {
             flex: 3;
@@ -101,6 +106,7 @@
             background-color: #00205b;
             padding: 15px;
             color: white;
+            margin-top: 20px; /* Add space above sidebar */
         }
         .sidebar h3 {
             margin-top: 0;
@@ -124,6 +130,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 14px; /* Adjusted font size for better mobile readability */
         }
         th, td {
             border: 1px solid #ddd;
@@ -134,7 +141,7 @@
             background-color: #f2f2f2;
         }
         .banner {
-            background-image: url('https://i.imgur.com/oJNm3vg.png'); /* Assuming the banner image is provided externally */
+            background-image: url('https://i.imgur.com/oJNm3vg.png');
             background-size: cover;
             height: 200px;
             display: flex;
@@ -143,6 +150,56 @@
             padding-left: 20px;
             color: white;
             font-size: 24px;
+            text-align: center;
+        }
+
+        /* Media Queries for mobile responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo img {
+                width: 150px; /* Smaller logo for mobile */
+                height: auto;
+            }
+            .right-logo img {
+                height: 40px; /* Adjusted height for better fit */
+            }
+            .nav ul li {
+                margin-right: 10px; /* Reduce space between items */
+            }
+            .nav-right {
+                margin-top: 5px; /* Less margin for mobile */
+            }
+            .search-bar {
+                width: 150px; /* Narrower search bar */
+            }
+            .publications {
+                flex-direction: column; /* Stack sidebar and content vertically */
+            }
+            .main-content {
+                margin-right: 0; /* Remove margin for better fit */
+            }
+            table {
+                font-size: 12px; /* Adjust font size for mobile */
+            }
+            .banner {
+                font-size: 18px; /* Smaller font on the banner for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav ul li {
+                margin-right: 5px; /* Further reduce space on very small screens */
+            }
+            .search-bar {
+                width: 120px; /* Even narrower search bar for small screens */
+            }
+            .banner {
+                height: 150px; /* Reduce banner height */
+                font-size: 16px; /* Further reduce font size on the banner */
+            }
         }
     </style>
 </head>
@@ -151,7 +208,7 @@
         <div class="logo">
             <img src="images/logo2.gif" alt="Government of India logo">
         </div>
-        <div class="right-logos">
+        <div class="right-logo">
             <img src="images/logo1.png" alt="Department for Promotion of Industry and Internal Trade logo">
             <img src="images/ipo-logo.png" alt="Intellectual Property India logo">
         </div>
@@ -173,8 +230,7 @@
         </div>
     </nav>
     <div class="banner">
-
-       <img src="images/image.png" alt="Banner Image">
+        <img src="images/image.png" alt="Banner Image">
     </div>
     <div class="content">
         <div class="breadcrumb">
@@ -246,7 +302,7 @@
                     <li><a href="#">Manual</a></li>
                     <li><a href="#">Other Publications</a></li>
                     <li><a href="#">IPR Bilaterals</a></li>
-                    <li><a href="#">Report of Technical Expert Group on Patent Law Issues bow</a></li>
+                    <li><a href="#">Report of Technical Expert Group on Patent Law Issues</a></li>
                     <li><a href="#">Patent Agent Examination</a></li>
                     <li><a href="#">Drugs Patent</a></li>
                     <li><a href="#">Roll of Scientific Advisers</a></li>
